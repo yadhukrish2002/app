@@ -45,7 +45,7 @@ const PincodeLookup = () => {
     };
   
     return (
-      <div className="con">
+      <div>
               <label htmlFor="pincode">Enter Pincode:</label><br /><br />
               <input
               type="text"
