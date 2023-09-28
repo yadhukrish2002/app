@@ -46,26 +46,19 @@ const PincodeLookup = () => {
   
     return (
       <div className="con">
-        <div className="row">
-        <h1>Pincode Lookup</h1>
-          <div>
               <label htmlFor="pincode">Enter Pincode:</label><br /><br />
               <input
               type="text"
               id="pincode"
               value={pincode}
               onChange={handlePincodeChange}
-              /><br />
-              <button onClick={fetchDetails}>Retrieve Details</button><br /><br /><br />
-          </div>
-        </div>
-        <div className="row">
+              /><br /><br />
+              <button onClick={fetchDetails}>Retrieve Details</button><br />
           {error && <p>{error}</p>}
           {details.city && <p>City: {details.city}</p>}
           {details.district && <p>District: {details.district}</p>}
           {details.state && <p>State: {details.state}</p>}
           {details.postal && <p>Postal Code: {details.postal}</p>}
-        </div>
       </div>
     );
   };
