@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { setemailGV } from '../globelmodule';
 
 function EmailVerification() {
   const [email, setEmail] = useState('');
@@ -31,6 +32,7 @@ function EmailVerification() {
       .post('http://localhost:3001/verify-otp', { email, otp }) // Use the complete URL
       .then((response) => {
         if (response.data.success) {
+          setemailGV(true);
           setVerificationStatus('OTP Verified! You are now authenticated.');
         } else {
           setVerificationStatus('Invalid OTP. Please try again.');

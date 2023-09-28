@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { setphoneGV } from '../globelmodule';
 
 function PhoneVerification() {
     const [phoneNumber, setPhoneNumber] = useState('');
@@ -31,6 +32,7 @@ function PhoneVerification() {
         .post('http://localhost:3001/verify-phone-number', { phoneNumber, verificationCode })
         .then((response) => {
           if (response.data.success) {
+            setphoneGV(true);
             setVerificationStatus('Phone number verified! You are now authenticated.');
           } else {
             setVerificationStatus('Invalid verification code. Please try again.');
